@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    background-color: black;
+}
+
+div#link{
+    display: flex;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    width: 500px;
+    height: 500px;
+    background-color: #111111;
+    font-family: sans-serif;
+    color: white;
+}
+
+main{
+    width: calc(100dvw - 20px);
+    height: calc(100dvh - 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px
+}   
+
+main a{
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: #1D2126;
+    border: 2px solid #1D2126;
+    border-radius:  10px;
+    color : white;
+    width: 170px;
+    height: 70px;
+    cursor: pointer;
+}
+
+main a:hover{
+    background-color: transparent;
+}
