@@ -7,7 +7,6 @@ function isinorder(){
 }
 
 function inorderindex(){
-    
 
     if (!localStorage.length || isinorder()) return;
     
@@ -16,8 +15,6 @@ function inorderindex(){
     localStorage.clear();
 
     array_data.forEach( (eachdata, index) => localStorage.setItem(index.toString(),eachdata))
-    console.log("try")
-
 }
 
 inorderindex();
