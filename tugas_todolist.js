@@ -1,27 +1,42 @@
-const output_ul = document.getElementById("output_ul");
-const input_data = document.getElementById("input_data");
-const add_button = document.getElementById("add_button");
-const reset_data = document.getElementById("reset_data");
+let index = localStorage.length;
 
-reset_data.addEventListener('click',()=>{
-    output_ul.innerHTML = "";
+reset_data.addEventListener('click',() => {
+    output_table.innerHTML = "";
+    localStorage.clear();
 })
 
-add_button.addEventListener('click',()=>{
-    let cli = document.createElement("li");
-    cli.id = "li_data";
-    cli.innerHTML = input_data.value;
+add_button.addEventListener('click',() => {
+    if(!input_data.value.replaceAll(' ','')){
+        alert("input shouldn't be empty");
+        return;
+    }
 
-    let delete_button = document.createElement("button");
-    delete_button.innerHTML = "delete";
-    cli.appendChild(delete_button);
+    //add data to local storage
+    const i = index.toString();
+    localStorage.setItem(i, input_data.value);
+    ++index;
 
-    // cli.innerHTML = `<li>${input_data.value} <button> delete </button> </li>`;
+    //td for data and button
+    const td_button = document.createElement('td');
+    const td_data = document.createElement('td');
+    
+    td_data.innerHTML = `<ul><li>${input_data.value}</li></ul>`;
+    
+    const delete_button = document.createElement('button');
     delete_button.addEventListener('click',()=>{
-        cli.remove();
+        td_button.remove();
+        td_data.remove();
+        localStorage.removeItem(i)
     })
+    delete_button.innerText = "delete"; 
+    td_button.appendChild(delete_button);
+    
+    
+    //add table row to table element
+    const table_row = document.createElement('tr');
+    table_row.appendChild(td_data);
+    table_row.appendChild(td_button);
+    output_table.appendChild(table_row);
 
-    input_data.value = ""
-
-    output_ul.appendChild(cli); 
+    input_data.value = "";
 })

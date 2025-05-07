@@ -7,17 +7,23 @@
     <title>DOM</title>
 </head>
 <body>
+    
     <div id="input_div">
-        <input id="input_data" type="teks"/>
+        <input placeholder="fill the data" id="input_data" type="teks"/>
         <button id="add_button">add data</button>
         <button id="reset_data">delete all</button>
     </div>
-
-    <div id="output_div">
-        
-        <ul id="output_ul"></ul>
-    </div>
-  
+    
+    <table id="output_table"></table>
+    
+    <script>
+        const output_table = document.getElementById("output_table")
+        const input_data = document.getElementById("input_data");
+        const add_button = document.getElementById("add_button");
+        const reset_data = document.getElementById("reset_data");
+    </script>
+    
+    <script src="load_localstorage.js"></script>
     <script src="tugas_todolist.js"></script>
 </body>
 </html>
