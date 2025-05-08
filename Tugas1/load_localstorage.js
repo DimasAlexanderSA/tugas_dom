@@ -14,28 +14,34 @@ function inorderindex(){
 
     localStorage.clear();
 
-    array_data.forEach( (eachdata, index) => localStorage.setItem(index.toString(),eachdata))
+    array_data.forEach( (eachdata, index) => localStorage.setItem(index.toString(),eachdata));
 }
 
 inorderindex();
 
 array_data.forEach((eachdata,index) => {
-    const td_button = document.createElement('td');
-    const td_data = document.createElement('td');
+    const li = document.createElement('li');
+    
+    const p = document.createElement('p');
+    p.id = "p_data";
+    p.innerText = eachdata;
 
-    td_data.innerHTML = `<ul><li>${eachdata}</li></ul>`
+    li.appendChild(p);
+
+    const delete_div = document.createElement('div');
+    delete_div.id = "delete_div";
 
     const delete_button = document.createElement('button');
+    delete_button.id = "delete_button"
     delete_button.addEventListener('click',()=>{
-        td_button.remove();
-        td_data.remove();
+        output_ul.removeChild(li);
         localStorage.removeItem(index.toString());
     })
     delete_button.innerText = "delete"; 
-    td_button.appendChild(delete_button);
+    delete_div.appendChild(delete_button);
+    li.appendChild(delete_div);
+    
+    output_ul.appendChild(li);
 
-    const table_row = document.createElement('tr');
-    table_row.appendChild(td_data);
-    table_row.appendChild(td_button);
-    output_table.appendChild(table_row);
+    input_data.value = "";
 })

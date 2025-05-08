@@ -1,7 +1,109 @@
+body{
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+}
+
 main{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: calc(100dvw - 20px);
     height: calc(100dvh - 20px);
 }
+
+main div#child{
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: #111111;
+    width: 400px;
+    height: 400px;
+    overflow-y: auto;
+}
+
+div#delete_div{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+li::before {
+    font-size: 20px;
+    content: "$";
+    margin-right: 8px;
+  }
+
+li{
+    display: flex;
+    align-items: center;
+}
+
+
+p#p_data{
+    width: 200px ;
+    overflow-x: auto;
+    scrollbar-width: none;
+    font-size: 20px;
+}
+
+input#input_data{
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 300px;
+    height: 30px;
+}
+
+
+/* button:hover{
+    background-color: transparent;
+    } */
+    
+button.main_button:hover{
+    background-color: transparent;
+    transform: scale(1.02);
+}
+
+button#delete_button:hover{
+    background-color: transparent;
+    transform: scale(1.05);
+}
+
+button#delete_button{
+    all: unset;
+    cursor: pointer;
+    border: 2px solid red;
+    background-color: red;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+button.main_button{
+    all: unset;
+    width: 143px;
+    height: 30px;
+    border: 2px solid #22262D ;
+    text-align: center;
+    cursor: pointer;
+    background-color: #22262D;
+    border-radius: 5px;
+}
+
+div#input_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div#button_div{
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+
+}
+
+
