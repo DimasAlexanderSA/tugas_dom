@@ -1,1 +1,1 @@
-[Link](https://dimasalexandersa.github.io/tugas_dom/)
+[Hasil](https://dimasalexandersa.github.io/tugas_dom/)
